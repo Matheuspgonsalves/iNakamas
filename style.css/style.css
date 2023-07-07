@@ -1,0 +1,71 @@
+/* Import */
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+/* Inicio */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100vh;
+    font-family: 'Bree Serif', serif;
+}
+
+/* Configuração lado esquerdo */
+.left {
+    background-color: #E85B0C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.text {
+    width: 653px;    
+}
+
+.text > h1 {
+    font-size: 64px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.text h3 {
+    width: 473px;
+    font-size: 40px;
+    color: #FFEAC0;
+}
+
+.img img{
+    margin-top: -50px;
+    width: 306px;
+}
+
+/* Configuração do lado direito */
+.right {
+    background-color: #E99820;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.login {
+    width: 575px;
+    height: 515px;
+    padding: 20px;
+    background-color: #B06926;
+    border-radius: 20px;
+}
+
+.login h2 {
+    color: white;
+    font-size: 68px;
+}
+
+.loginText {
+    border-bottom: solid 3px white;
+    width: 173px;
+    position: relative;
+    left: 50%;
+    margin-left: -86.5px;
+}
