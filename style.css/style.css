@@ -163,6 +163,7 @@ input:-webkit-autofill {
     text-align: center;
     background-color: rgb(152, 236, 130);
     padding: 8px;
+    margin-bottom: 30px;
     border-radius: 10px;
     font-family: 'Inria Sans', sans-serif;
     color: green;

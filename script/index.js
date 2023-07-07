@@ -35,7 +35,13 @@ function entrar() {
     })
 
     if(userLogin.value == userValid.user && passLogin.value == userValid.password) {
-        window.location.href = './home.html'
+        msgSuccess.innerHTML = 'Login efetuado com sucesso'
+        msgSuccess.setAttribute('style', 'display: block')
+        msgError.setAttribute('style', 'display:none')
+        setTimeout(() =>{
+            window.location.href = './home.html'
+        },1500)
+        
     } else {
         lblUser.setAttribute('style', 'color: red;')
         userLogin.setAttribute('style', 'border-color: red;')
@@ -45,6 +51,7 @@ function entrar() {
 
         msgError.innerHTML = 'Usuário e senha não conferem ou não existe.'
         msgError.setAttribute('style', 'display: block')
+        msgSuccess.setAttribute('style', 'display: none')
         userLogin.focus()
     }
 
