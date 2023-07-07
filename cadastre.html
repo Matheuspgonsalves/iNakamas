@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css/reset.css">
     <link rel="stylesheet" href="./style.css/cadastre.css">
-    <title>Login</title>
+    <title>Cadastre-se</title>
 </head>
 <body>
     <div class="container">
@@ -25,29 +25,32 @@
                     <h2>Cadastre-se</h2>
                 </div>
 
+                <div id="msgSuccess"></div>
+                <div id="msgError"></div>
+
                 <div class="data">
                     <div class="campos">
-                        <label  for="user">Nome completo</label>
+                        <label id="lblName" for="name">Nome</label>
                         <input class="inp" type="text" name="name" id="name" required>
                     </div>
 
                     <div class="campos">
-                        <label for="pass">Usuário</label>
+                        <label id="lblUser" for="user">Usuário</label>
                         <input class="inp" type="text" name="user" id="user" required>
                     </div>
                     
                     <div class="campos">
-                        <label for="pass">Email</label>
+                        <label id="lblMail" for="mail">Email</label>
                         <input class="inp" type="mail" name="mail" id="mail" required>
                     </div>
 
                     <div class="campos">
-                        <label for="pass">Senha</label>
-                        <input class="inp" type="text" name="pass" id="pass" required>
+                        <label id="lblPass" for="pass">Senha</label>
+                        <input class="inp" type="password" name="pass" id="pass" required>
                     </div>
 
                     <div class="btn">
-                        <input class="btnCad" type="button" value="Cadastrar">
+                        <input onclick="cadastrar()" class="btnCad" type="button" value="Cadastrar">
                     </div>
 
                     <div class="msg">
@@ -57,5 +60,7 @@
             </div>
         </div>
     </div>
+
+    <script src="./script/cadastre.js"></script>
 </body>
 </html>

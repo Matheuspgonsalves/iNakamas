@@ -55,7 +55,6 @@
 
 .login {
     min-width: 300px;
-    
     padding: 40px;
     background-color: #B06926;
     border-radius: 30px;
@@ -89,10 +88,11 @@
 
 label {
     position: absolute;
+    transform: translateY(-16px);
     padding-bottom: 30px;
     left: 2px;
-    color: #e2e2e234;
-    font-size: 20px;
+    color: #b1b1b1;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     user-select: none;
     z-index: 0;
@@ -162,4 +162,24 @@ input:-webkit-autofill {
     color: #671FFF;
 }
 
+#msgSuccess {
+    display:none;
+    text-align: center;
+    background-color: rgb(152, 236, 130);
+    padding: 8px;
+    border-radius: 10px;
+    font-family: 'Inria Sans', sans-serif;
+    color: green;
+}
+
+#msgError {
+    display:none;
+    text-align: center;
+    background-color: rgb(233, 139, 139);
+    padding: 8px;
+    border-radius: 10px;
+    font-family: 'Inria Sans', sans-serif;
+    color: rgb(243, 22, 22);
+    
+}
   
