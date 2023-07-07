@@ -7,7 +7,7 @@ let user = document.querySelector('#user')
 let lblUser = document.querySelector('#lblUser')
 let validUser = false
 
-let email = document.querySelector('#email')
+let email = document.querySelector('#mail')
 let lblMail = document.querySelector('#lblMail')
 let validMail = false
 
@@ -57,7 +57,7 @@ mail.addEventListener('keyup', () => {
 password.addEventListener('keyup', () => {
     if(password.value.length < 5) {
         lblPass.setAttribute('style', 'color: red;')
-        lblPass.innerHTML = '<span>Senha mínima 4 caracteres</span>'
+        lblPass.innerHTML = '<span>Senha mínima de 5 caracteres</span>'
         validPass = false
     }else {
         lblPass.setAttribute('style', 'color: ;')
@@ -73,14 +73,29 @@ function cadastrar() {
 
     if(validName && validUser && validMail && validPass) {
         msgSucces.setAttribute('style', 'display: block;')
-        msgSucces.innerHTML = '<strong>Usuário cadastrado!</strong>'
+        msgSucces.innerHTML = '<strong>Usuário cadastrado com sucesso!</strong>'
         msgError.setAttribute('style', 'display: none')
+
+        let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+
+        listaUser.push(
+            {
+                nome: name.value,
+                user: user.value,
+                mail: email.value,
+                password: password.value
+            }
+        )
+
+        localStorage.setItem('listaUser', JSON.stringify(listaUser))
+        
+        setTimeout(() =>{
+            window.location.href = './index.html'
+        },1500)
+        
     }else {
         msgError.setAttribute('style', 'display: block;')
         msgError.innerHTML = '<strong>Usuário não cadastrado.<br>Preencha os campos vazios.</strong>'
         msgSucces.setAttribute('style', 'display: none')
     }
 }
-
-
-

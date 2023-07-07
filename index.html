@@ -25,19 +25,22 @@
                     <h2>Login</h2>
                 </div>
 
+                <div id="msgSuccess"></div>
+                <div id="msgError"></div>
+
                 <div class="data">
                     <div class="campos">
-                        <label  for="user">Usuário</label>
-                        <input class="inp" type="text" name="user" id="user">
+                        <label id="lblUser"  for="">Usuário</label>
+                        <input class="inp" type="text" name="user" id="user" required>
                     </div>
 
                     <div class="campos">
-                        <label for="pass">Senha</label>
+                        <label id="lblPass" for="">Senha</label>
                         <input class="inp" type="text" name="pass" id="pass" required>
                     </div>
 
                     <div class="btn">
-                        <input class="btnCad" type="button" value="Entrar">
+                        <input class="btnCad" type="button" value="Entrar" onclick="entrar()">
                     </div>
 
                     <div class="msg">
