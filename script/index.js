@@ -12,7 +12,12 @@ function entrar() {
     let msgError = document.querySelector('#msgError')
     let msgSuccess = document.querySelector('#msgSuccess')
 
-    let listaUser = []
+    let listaUser = {
+        nome: '',
+        user: '',
+        mail: '',
+        password: ''
+    }
 
     let userValid = {
         nome: '',
@@ -54,8 +59,6 @@ function entrar() {
         msgSuccess.setAttribute('style', 'display: none')
         userLogin.focus()
     }
-
-    
 
     
 }
