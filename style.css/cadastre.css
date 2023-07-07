@@ -30,14 +30,18 @@
 }
 
 .text h3 {
+    position: relative;
     width: 473px;
     font-size: 40px;
     color: #FFEAC0;
+    z-index: 1;
 }
 
 .img img{
+    position: relative;
     margin-top: -50px;
-    width: 306px;
+    width: 506px;
+    z-index: 0;
 }
 
 /* Configuração do lado direito */
@@ -55,19 +59,19 @@
     padding: 40px;
     background-color: #B06926;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .login h2 {
     color: white;
-    font-size: 68px;
+    font-size: 40px;
 }
 
 .loginText {
     border-bottom: solid 3px white;
-    width: 173px;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     margin-bottom: 30px;
 }
 
