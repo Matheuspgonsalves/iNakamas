@@ -214,6 +214,7 @@ input:-webkit-autofill {
 
     input {
         height: 15px;
+        font-size: 10px;
     }
 
     .btn .btnCad {
@@ -235,8 +236,7 @@ input:-webkit-autofill {
 
 @media (min-width: 301px) and (max-width: 800px) {
     .container {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
     
     .left {
@@ -268,6 +268,7 @@ input:-webkit-autofill {
 
     input {
         height: 15px;
+        font-size: 10px;
     }
 
     .btn .btnCad {
@@ -325,6 +326,7 @@ input:-webkit-autofill {
 
     input {
         height: 15px;
+        font-size: 10px;
     }
 
     .btn .btnCad {
