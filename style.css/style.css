@@ -235,10 +235,12 @@ input:-webkit-autofill {
 
 @media (min-width: 301px) and (max-width: 800px) {
     .container {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100vh;
+        font-family: 'Bree Serif', serif;
     }
-    
+
     .left {
         display: none;
     }
