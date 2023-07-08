@@ -12,12 +12,7 @@ function entrar() {
     let msgError = document.querySelector('#msgError')
     let msgSuccess = document.querySelector('#msgSuccess')
 
-    let listaUser = {
-        nome: '',
-        user: '',
-        mail: '',
-        password: ''
-    }
+    let listaUser = []
 
     let userValid = {
         nome: '',

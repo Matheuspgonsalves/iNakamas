@@ -16,11 +16,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 10px;
 }
 
 .text {
-    width: 653px;    
+    width: 250px;    
 }
 
 .text > h1 {
@@ -46,33 +46,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 15px;
 }
 
 .login {
-    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 40px;
     background-color: #B06926;
     border-radius: 30px;
 }
 
 .login h2 {
+    display: flex;
     color: white;
-    font-size: 68px;
-}
-
-.loginText {
+    font-size: 30px;
     border-bottom: solid 3px white;
-    width: 173px;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 
 .data {
-    width: 475px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -82,11 +78,11 @@
     margin-bottom: 60px;
 }
 
-label {
-    position: absolute;
+.campos  label {
+    position: relative;
     padding-bottom: 30px;
     left: 2px;
-    color: #e2e2e234;
+    color: #e2e2e2d2;
     font-size: 20px;
     transform: translateY(-12px);
     font-family: Arial, Helvetica, sans-serif;
@@ -98,7 +94,8 @@ label:hover {
     cursor: text;
 }
 
-.inp {
+input {
+    position: relative;
     z-index: 1;
     height: 40px;
     width: 100%;
@@ -110,7 +107,7 @@ label:hover {
 }
 
 .inp:focus {
-    z-index: 1;
+    
     outline: none;
     border-bottom: solid 3px rgb(248, 192, 6);
 }
@@ -137,6 +134,7 @@ input:-webkit-autofill {
     border-radius: 20px;
     font-family: 'Inria Sans', sans-serif;
     font-size: 20px;
+    text-align: center;
 }
 
 .btn .btnCad:hover {
@@ -178,4 +176,113 @@ input:-webkit-autofill {
     border-radius: 10px;
     font-family: 'Inria Sans', sans-serif;
     color: rgb(243, 22, 22);
+}
+
+@media (max-width: 300px) {
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .left {
+        display: none;
+    }
+
+    .login {
+        min-width: 75px;
+        padding: 20px;
+    }
+
+    .login h2 {
+        font-size: 30px;
+    }
+
+    .data {
+        width: 150px;
+        
+    }
+    
+    .campos {
+        margin-bottom: 10px;
+    }
+
+    .campos  label {
+        font-size: 10px;
+    }
+
+    input {
+        height: 15px;
+    }
+
+    .btn .btnCad {
+        width: 100px;
+        padding: 10px;
+        border-radius: 15px;
+        font-family: 'Inria Sans', sans-serif;
+        font-size: 15px;
+    }
+
+    .msg {
+        margin-top: 5px;
+        color: white;
+        text-align: center;
+        font-family: 'Inria Sans', sans-serif;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 301px) and (max-width: 667px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .left {
+        display: none;
+    }
+
+    /* Lado direito */
+    .login {
+        min-width: 75px;
+        padding: 20px;
+    }
+
+    .login h2 {
+        font-size: 30px;
+    }
+
+    .data {
+        width: 150px;
+        
+    }
+    
+    .campos {
+        margin-bottom: 10px;
+    }
+
+    .campos  label {
+        font-size: 10px;
+    }
+
+    input {
+        height: 15px;
+    }
+
+    .btn .btnCad {
+        width: 100px;
+        padding: 10px;
+        border-radius: 15px;
+        font-family: 'Inria Sans', sans-serif;
+        font-size: 15px;
+    }
+
+    .msg {
+        margin-top: 5px;
+        color: white;
+        text-align: center;
+        font-family: 'Inria Sans', sans-serif;
+        font-size: 10px;
+    }
 }

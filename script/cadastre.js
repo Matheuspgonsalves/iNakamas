@@ -76,7 +76,7 @@ function cadastrar() {
         msgSucces.innerHTML = '<strong>Usuário cadastrado com sucesso!</strong>'
         msgError.setAttribute('style', 'display: none')
 
-        let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+        listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
 
         listaUser.push(
             {
