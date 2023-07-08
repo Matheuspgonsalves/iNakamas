@@ -1,0 +1,92 @@
+/* Import */
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inria+Sans:wght@700&display=swap');
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 90vh;
+    height: 100vh;
+    background-color: #08348B;
+    font-family: 'Inria Sans';
+}
+
+/* Header */
+#header {
+    background-color: #08348B;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo img {
+    height: 75px;
+}
+
+.lista {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+}
+
+.lista li {
+    list-style: none;
+    margin-left: 45px;
+}
+
+.lista a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.btnLogin {
+    background: #0093E5;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+    width: 110px;
+}
+
+/* Home */
+
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    width: 560px; 
+}
+
+.text .title {
+    font-size: 130px;
+    color: #B9DDFF;
+}
+
+.text h2 {
+    font-size: 45px;
+    color: #00FFB2;
+}
+
+.text h3 {
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.btnComece {
+    display: inline-block;
+    color: white;
+    background-color: #0093E5;
+    border-radius: 50px;
+    padding: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btnComece:hover {
+    cursor: pointer;
+}
+
+.btnComece p {
+    font-size: 30px
+}
