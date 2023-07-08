@@ -7,11 +7,12 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100vh;
     font-family: 'Bree Serif', serif;
+    background-color: #08348B;
 }
 
 /* Configuração lado esquerdo */
 .left {
-    background-color: #E85B0C;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +43,6 @@
 
 /* Configuração do lado direito */
 .right {
-    background-color: #E99820;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +54,7 @@
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    background-color: #B06926;
+    background-color: #265DB0;
     border-radius: 30px;
 }
 
@@ -126,7 +126,7 @@ input:-webkit-autofill {
     width: 156px;
     padding: 30px;
     color: white;
-    background-color: #57401e;
+    background-color: #17131A;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
