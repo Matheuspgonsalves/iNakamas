@@ -7,8 +7,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh 90vh;
-    height: 100vh;
+    grid-template-rows: 10vh auto;
     font-family: 'Inria Sans';
 }
 
@@ -53,25 +52,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .list {
     display: grid;
-    border: 1px solid blue;
     
+    gap: 10px;
     width: 80%;
     grid-template-rows: auto;
     grid-template-columns: 1fr;
 }
 
 /* Título */
-.box {
-    border: 1px solid black;
-}
+
 
 .box-title {
     grid-column: 1/4;
-    color: white;
+    color: #B9DDFF;
 }
 
 /* Campos de adicionar e busca */
@@ -79,7 +77,7 @@ body {
 .func {
     display: flex;
     justify-content: space-between;
-    padding: 2px;
+    
     height: 40px;
 }
 
@@ -125,5 +123,32 @@ body {
 
 .box-table {
     grid-column: 1/4;
+    min-height: 300px;
+    border-radius: 3px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: aquamarine;
+}
+
+.campos {
+    border: 1px solid black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5px;
+    background-color: #dadada;
+}
+
+.t-cadastro {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr 1fr 1fr 80px;
+    grid-template-rows: 30px;
+    
+}
+
+.p-cadastro {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr 1fr 1fr 80px;
+    grid-template-rows: 30px;
+    font-size: 12px;
 }
 
