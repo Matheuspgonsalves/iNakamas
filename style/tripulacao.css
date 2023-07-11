@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inria+Sans:wght@700&display=swap');
+
+body {
+    background-color: #08348B;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 90vh;
+    height: 100vh;
+    font-family: 'Inria Sans';
+}
+
+/* Header */
+#header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo img {
+    height: 75px;
+}
+
+.lista {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+}
+
+.lista li {
+    list-style: none;
+    margin-left: 45px;
+}
+
+.lista a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.btnLogin {
+    background: #0093E5;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+    width: 110px;
+}
+
+/* Section */
+
+#section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    display: grid;
+    border: 1px solid blue;
+    
+    width: 80%;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+}
+
+/* Título */
+.box {
+    border: 1px solid black;
+}
+
+.box-title {
+    grid-column: 1/4;
+    color: white;
+}
+
+/* Campos de adicionar e busca */
+
+.func {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    height: 40px;
+}
+
+.box-add {
+    padding-right: 10px;
+    border-radius: 10px;
+    background-color: #008B0E;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+
+
+.box-search {
+    display: flex;
+}
+
+.box-search input {
+    height: 100%;
+    width: 250px;
+    border-radius: 2px 0px 0px 2px;
+    border: 1px solid #777777;
+}
+
+.box-search button {
+    height: 100%;
+    border-radius: 0px 2px 2px 0px;
+    border: 1px solid #777777;
+    width: 40px;
+    color: white;
+    background-color: black;
+}
+
+.box-search button:hover {
+    background-color: rgb(39, 39, 39);
+    cursor: pointer;
+}
+
+/* Tabela de exibição */
+
+.box-table {
+    grid-column: 1/4;
+}
+
