@@ -1,18 +1,21 @@
-//Declaracao de variaveis
-var btnAddMembro = document.querySelector('.box-add');
-var btnFechar = document.querySelector('.fechar');
+// Declaracao de variaveis
+const btnAdd = document.querySelector('.box-add');
+const btnFechar = document.querySelector('.btnFechar');
+const fade = document.querySelector('#fade');
+const modal = document.querySelector('#modal');
 
-//Eventos
-btnAddMembro.addEventListener('click', formAdic);
+// Eventos
+btnAdd.addEventListener('click', () => {
+    modal.setAttribute('style', 'display: block;');
+    fade.setAttribute('style', 'display: block;');
+});
+
 btnFechar.addEventListener('click', fechar);
+fade.addEventListener('click', fechar);
 
-//Funcao para formulario de add membros
-function formAdic() {
-   let formMembro = document.querySelector('.formMembro'); 
-   formMembro.setAttribute('style', 'display: flex')
-}
-
+// Funcoes
 function fechar() {
-    let formMembro = document.querySelector('.formMembro'); 
-    formMembro.setAttribute('style', 'display: none')
+    modal.setAttribute('style', 'display: none;');
+    fade.setAttribute('style', 'display: none;');
 }
+

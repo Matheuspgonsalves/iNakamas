@@ -39,31 +39,34 @@
                         </p>
                     </div>
 
-                    <!-- Formulário para quando for adicionar membro -->
-                    <div class="formMembro">
-                        <div class="fechar">
-                            <i class="bi bi-x-lg"></i>
+                    <!-- Modal para adicionar membro -->
+                    <div id="fade"></div>
+                    <div id="modal">
+                        <div class="modal-header">
+                            <h2>Insira as informações</h2>
+                            <div class="btnFechar">
+                                <i class="bi bi-x-lg"></i>
+                            </div>
                         </div>
-                        <div class="nome inpCad">
-                            <label for="">Nome</label>
-                            <input type="text" name="Nome" id="Nome">
-                        </div>
+                        <div class="modal-body">
+                            <div class="inpNome inp">
+                                <label for="">Nome</label>
+                                <input type="text" name="nome" id="nome">
+                            </div>
+                            <div class="inpCel inp">
+                                <label for="">Celular</label>
+                                <input type="text" name="cel" id="cel">
+                            </div>
+                            <div class="inpMail inp">
+                                <label for="">Email</label>
+                                <input type="text" name="mail" id="mail">
+                            </div>
 
-                        <div class="celular inpCad">
-                            <label for="">Celular</label>
-                            <input type="text" name="Cel" id="Cel">
+                            <div class="btnEnviar">Enviar</div>
                         </div>
-
-                        <div class="email inpCad">
-                            <label for="">Email</label>
-                            <input type="email" name="Email" id="Email">
-                        </div>
-
-                        <div class="btnEnviar">
-                            Enviar
-                        </div>
+                        
                     </div>
-
+                    
                     <div class="box-search">
                         <input type="text" id="buscarNome" placeholder="Buscar por nome">
                         <button>

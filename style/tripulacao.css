@@ -159,52 +159,73 @@ body {
 }
 
 
-/* Input para funcao de cadastro */
+/* Form para input de cadastro */
 
-.fechar {
-    align-self: flex-end;
-    cursor: pointer;
-}
 
-.formMembro {
-    border-radius: 10px;
-    padding: 30px;
-    min-height: 300px;
-    background-color: #111d52;
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    transition: all 0.3s;
-    color: white;
-}
-
-.inpCad {
+.inp {
     display: flex;
     flex-direction: column;
+    margin-bottom: .5rem;
+    width: 100%;
 }
 
-.inpCad input {
+.inp input {
     height: 30px;
     border-radius: 3px;
-    border: none;
-    display: block;
-   font-size: 15px;
+    border: 1px solid gray;
 }
 
 .btnEnviar {
-    margin-top: 15px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #4479e2;
+    background-color: #008B0E;
+    display: inline-block;
+    padding: .8rem 1.8rem;
     border-radius: 5px;
-    transition: all 0.2s;
-}
-
-.btnEnviar:hover {
-    background-color: #113680;
-    color: white;
+    margin-top: 1.2rem;
     cursor: pointer;
 }
+
+/* Modal configs */
+
+#fade {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#modal {
+    position: fixed;
+    z-index: 10;
+    color: white;
+    background-color: #0093E5;
+    width: 400px;
+    padding: 1.2rem;
+    border-radius: .5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.btnFechar {
+    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
