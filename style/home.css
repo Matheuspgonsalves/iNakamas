@@ -87,6 +87,8 @@
     cursor: pointer;
 }
 
-.btnComece p {
-    font-size: 30px
+.btnComece a{
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
 }
