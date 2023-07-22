@@ -1,4 +1,4 @@
-// Declaracao de todas as variaveis
+//Variaveis ================================
 
 //Variaveis do modal
 const btnAdd = document.querySelector('.box-add');
@@ -14,7 +14,8 @@ const btnEnviar = document.querySelector("#btnEnviar");
 const modalBody = document.querySelector("#modal-body");
 const tabela = document.querySelector(".box-table");
 
-// Todos os eventos 
+
+//Eventos =========================================
 
 //Evento relacionados ao modal
 btnAdd.addEventListener('click', () => {
@@ -28,7 +29,8 @@ fade.addEventListener('click', fechar);
 btnEnviar.addEventListener("click", cadastrar);
 
 
-// Todas as funcoes
+
+// Todas as funcoes ==================
 
 //Funcao para o modal
 function fechar() {
@@ -53,6 +55,10 @@ function cadastrar () {
 
     localStorage.setItem("membros", JSON.stringify(membros));
 
+    nomeUsuario.value = '';
+    celularUsuario.value = '';
+    emailUsuario.value = '';
+
     exibir(membros);
 }
 
@@ -76,11 +82,29 @@ function exibir(membros) {
             <div class="c3 campos">${membros[i].celular}</div>
             <div class="c4 campos">${membros[i].email}</div>
             <div class="c5 campos">27/07/2003</div>
-            <div class="c6 campos">ED EX</div>
+            <div class="c6 campos">
+                <div class="btnExcluir" data-index="${i}">
+                    <i class="bi bi-x-square-fill"></i>
+                </div>
+            </div>
         </div>`;
     };
+
+    const btnExcluirList = document.querySelectorAll(".btnExcluir");
+    for (let i = 0; i < btnExcluirList.length; i++) {
+        btnExcluirList[i].addEventListener("click", function() {
+            const index = this.getAttribute("data-index");
+            excluir(index, membros);
+        });
+    }
+
 }
 
+function excluir(index, membros) {
+    membros.splice(index, 1);
+    localStorage.setItem("membros", JSON.stringify(membros));
+    exibir(membros);
+}
 
 //Start
 if(localStorage.getItem("membros")) {
@@ -88,3 +112,6 @@ if(localStorage.getItem("membros")) {
     exibir(users);
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    
+});

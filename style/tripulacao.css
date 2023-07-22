@@ -236,3 +236,17 @@ body {
     align-items: center;
 }
 
+.btnExcluir {
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.bi-x-square-fill {
+    color: red;
+    cursor: pointer;
+}
+
+.bi-x-square-fill:hover {
+    color: rgb(158, 0, 0);
+}
+
