@@ -24,7 +24,7 @@ function entrar() {
     listaUser = JSON.parse(localStorage.getItem('listaUser'))
 
     listaUser.forEach((item) => {
-        if(userLogin.value == item.user && passLogin.value == item.password) {
+        if((userLogin.value == item.user || userLogin.value == item.mail) && passLogin.value == item.password) {
             userValid = {
                 nome: item.nome,
                 user: item.user,

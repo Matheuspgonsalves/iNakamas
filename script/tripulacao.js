@@ -14,7 +14,6 @@ const btnEnviar = document.querySelector("#btnEnviar");
 const modalBody = document.querySelector("#modal-body");
 const tabela = document.querySelector(".box-table");
 
-
 //Eventos =========================================
 
 //Evento relacionados ao modal
@@ -28,8 +27,6 @@ fade.addEventListener('click', fechar);
 //Eventos relacionados ao cadastro
 btnEnviar.addEventListener("click", cadastrar);
 
-
-
 // Todas as funcoes ==================
 
 //Funcao para o modal
@@ -40,18 +37,19 @@ function fechar() {
 
 //Funcao de cadastro
 function cadastrar () {
-
     let membros = [];
 
     if(localStorage.getItem("membros")) {
         membros = JSON.parse(localStorage.getItem("membros"))
     }
 
+    const dataHoraCadastrado = new Date().toLocaleString(); // Obtém a data e hora local formatada
     membros.push({
         nome: nomeUsuario.value,
         celular: celularUsuario.value,
-        email: emailUsuario.value
-    })
+        email: emailUsuario.value,
+        dataHoraCadastro: dataHoraCadastrado // Adiciona a data e hora de cadastro
+    });
 
     localStorage.setItem("membros", JSON.stringify(membros));
 
@@ -74,14 +72,13 @@ function exibir(membros) {
     </div>
 `
     for (let i = 0; i < membros.length; i++) {
-
         tabela.innerHTML += `
         <div class="p-cadastro">
             <div class="c1 campos">${i+1}</div>
             <div class="c2 campos">${membros[i].nome}</div>
             <div class="c3 campos">${membros[i].celular}</div>
             <div class="c4 campos">${membros[i].email}</div>
-            <div class="c5 campos">27/07/2003</div>
+            <div class="c5 campos">${membros[i].dataHoraCadastro}</div>
             <div class="c6 campos">
                 <div class="btnExcluir" data-index="${i}">
                     <i class="bi bi-x-square-fill"></i>
@@ -97,7 +94,6 @@ function exibir(membros) {
             excluir(index, membros);
         });
     }
-
 }
 
 function excluir(index, membros) {
