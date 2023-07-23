@@ -1,3 +1,19 @@
+// Autenticacao de login 
+if(localStorage.getItem("token") == null) {
+    alert("Efetue login para acessar essa página");
+    window.location.href = './index.html'
+} 
+
+function sair() {
+    localStorage.removeItem("token");
+
+    setTimeout(() =>{
+        window.location.href = './index.html'
+    },1500)
+}
+
+
+
 //Variaveis ================================
 
 //Variaveis do modal
@@ -111,3 +127,4 @@ if(localStorage.getItem("membros")) {
 document.addEventListener("DOMContentLoaded", function() {
     
 });
+

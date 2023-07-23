@@ -1,5 +1,3 @@
-
-
 //Função para verificar login
 function entrar() {
     let userLogin = document.querySelector('#user')
@@ -33,14 +31,19 @@ function entrar() {
             }
         }
     })
+    
 
-    if(userLogin.value == userValid.user && passLogin.value == userValid.password) {
+    if((userLogin.value == userValid.user || userLogin.value == userValid.mail) && passLogin.value == userValid.password) {
         msgSuccess.innerHTML = 'Login efetuado com sucesso'
         msgSuccess.setAttribute('style', 'display: block')
         msgError.setAttribute('style', 'display:none')
         setTimeout(() =>{
             window.location.href = './home.html'
         },1500)
+
+        let token = Math.random().toString(16).substr(2);
+        localStorage.setItem("token", token)
+        
         
     } else {
         lblUser.setAttribute('style', 'color: red;')
@@ -54,6 +57,7 @@ function entrar() {
         msgSuccess.setAttribute('style', 'display: none')
         userLogin.focus()
     }
-
-    
 }
+
+
+
