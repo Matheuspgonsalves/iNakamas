@@ -1,3 +1,15 @@
+//Inicializacao localStorage
+let listaUser = [
+    {
+        nome: "admin",
+        user: "admin",
+        mail: "admin@gmail",
+        password: "admin"
+    }
+]
+
+localStorage.setItem("listaUser", JSON.stringify(listaUser));
+
 //Recebendo Label e Input dos formulários de cadastro
 let name = document.querySelector('#name')
 let lblName = document.querySelector('#lblName')
@@ -75,8 +87,8 @@ function cadastrar() {
         msgSucces.setAttribute('style', 'display: block;')
         msgSucces.innerHTML = '<strong>Usuário cadastrado com sucesso!</strong>'
         msgError.setAttribute('style', 'display: none')
-
-        listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+        
+        listaUser = JSON.parse(localStorage.getItem('listaUser'))
 
         listaUser.push(
             {

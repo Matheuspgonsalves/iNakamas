@@ -1,3 +1,19 @@
+//Iniciando localStorage
+let listaUser = [];
+
+if(localStorage.getItem("listaUser") == null) {
+     listaUser = [
+        {
+            nome: "admin",
+            user: "admin",
+            mail: "admin@gmail",
+            password: "admin"
+        }
+    ]
+    localStorage.setItem("listaUser", JSON.stringify(listaUser));
+}
+
+
 //Função para verificar login
 function entrar() {
     let userLogin = document.querySelector('#user')
@@ -10,7 +26,7 @@ function entrar() {
     let msgError = document.querySelector('#msgError')
     let msgSuccess = document.querySelector('#msgSuccess')
 
-    let listaUser = []
+   
 
     let userValid = {
         nome: '',
