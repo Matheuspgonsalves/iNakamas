@@ -28,7 +28,8 @@ const tabela = document.querySelector(".box-table");
 
 //Variavel para o campo de pesquisa
 const buscarNome = document.querySelector("#buscarNome");
-const listaMembros = JSON.parse(localStorage.getItem("membros")) || [];
+let listaMembros = JSON.parse(localStorage.getItem("membros")) || [];
+let listaExibicao = [];
 
 //Eventos =========================================
 
@@ -72,11 +73,13 @@ function cadastrar() {
     celularUsuario.value = '';
     emailUsuario.value = '';
 
-    exibir(membros);
+    listaMembros = membros;
+    exibir(listaMembros);
 }
 
 //Mostragem dos membros
 function exibir(membros) {
+    listaExibicao = [...membros]; // Fazer uma cópia da lista de membros para a lista de exibição
     tabela.innerHTML = `
     <div class="info-cadastro">
         <div class="c1 campos">Nº</div>
@@ -88,14 +91,14 @@ function exibir(membros) {
     </div>
     `;
 
-    for (let i = 0; i < membros.length; i++) {
+    for (let i = 0; i < listaExibicao.length; i++) {
         tabela.innerHTML += `
         <div class="p-cadastro">
             <div class="c1 campos">${i + 1}</div>
-            <div class="c2 campos">${membros[i].nome}</div>
-            <div class="c3 campos">${membros[i].celular}</div>
-            <div class="c4 campos">${membros[i].email}</div>
-            <div class="c5 campos">${membros[i].dataHoraCadastro}</div>
+            <div class="c2 campos">${listaExibicao[i].nome}</div>
+            <div class="c3 campos">${listaExibicao[i].celular}</div>
+            <div class="c4 campos">${listaExibicao[i].email}</div>
+            <div class="c5 campos">${listaExibicao[i].dataHoraCadastro}</div>
             <div class="c6 campos">
                 <div class="btnExcluir" data-index="${i}">
                     <i class="bi bi-x-square-fill"></i>
@@ -108,16 +111,19 @@ function exibir(membros) {
     for (let i = 0; i < btnExcluirList.length; i++) {
         btnExcluirList[i].addEventListener("click", function() {
             const index = this.getAttribute("data-index");
-            excluir(index, membros);
+            excluir(index);
         });
     }
 }
 
 //Exclusão dos membros
-function excluir(index, membros) {
-    membros.splice(index, 1);
-    localStorage.setItem("membros", JSON.stringify(membros));
-    exibir(membros);
+function excluir(index) {
+    const membroExcluido = listaExibicao[index];
+    const indexMembro = listaMembros.findIndex(membro => membro.nome === membroExcluido.nome);
+    listaExibicao.splice(index, 1);
+    listaMembros.splice(indexMembro, 1);
+    localStorage.setItem("membros", JSON.stringify(listaMembros));
+    exibir(listaMembros);
 }
 
 // Função para pesquisar
@@ -126,11 +132,11 @@ buscarNome.addEventListener("input", pesquisar);
 // Pesquisar membros
 function pesquisar() {
     const searchTerm = buscarNome.value.trim().toLowerCase();
-    const membrosFiltrados = listaMembros.filter(membro =>
+    listaExibicao = listaMembros.filter(membro =>
         membro.nome.toLowerCase().includes(searchTerm)
     );
 
-    exibir(membrosFiltrados);
+    exibir(listaExibicao);
 }
 
 // Start
