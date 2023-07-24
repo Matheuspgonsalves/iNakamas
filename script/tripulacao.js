@@ -1,21 +1,17 @@
 // Autenticacao de login 
-if(localStorage.getItem("token") == null) {
+if (localStorage.getItem("token") == null) {
     alert("Efetue login para acessar essa página");
-    window.location.href = './index.html'
+    window.location.href = './index.html';
 } 
 
 function sair() {
     localStorage.removeItem("token");
-
-    setTimeout(() =>{
-        window.location.href = './index.html'
-    },1500)
+    setTimeout(() => {
+        window.location.href = './index.html';
+    }, 1500);
 }
 
-
-
 //Variaveis ================================
-
 //Variaveis do modal
 const btnAdd = document.querySelector('.box-add');
 const btnFechar = document.querySelector('.btnFechar');
@@ -23,12 +19,16 @@ const fade = document.querySelector('#fade');
 const modal = document.querySelector('#modal');
 
 //Variaveis para adicionar membro
-const nomeUsuario = document.querySelector("#nome")
-const celularUsuario = document.querySelector("#cel")
-const emailUsuario = document.querySelector("#mail")
+const nomeUsuario = document.querySelector("#nome");
+const celularUsuario = document.querySelector("#cel");
+const emailUsuario = document.querySelector("#mail");
 const btnEnviar = document.querySelector("#btnEnviar");
 const modalBody = document.querySelector("#modal-body");
 const tabela = document.querySelector(".box-table");
+
+//Variavel para o campo de pesquisa
+const buscarNome = document.querySelector("#buscarNome");
+const listaMembros = JSON.parse(localStorage.getItem("membros")) || [];
 
 //Eventos =========================================
 
@@ -37,13 +37,12 @@ btnAdd.addEventListener('click', () => {
     modal.setAttribute('style', 'display: block;');
     fade.setAttribute('style', 'display: block;');
 });
+
 btnFechar.addEventListener('click', fechar);
 fade.addEventListener('click', fechar);
 
 //Eventos relacionados ao cadastro
 btnEnviar.addEventListener("click", cadastrar);
-
-// Todas as funcoes ==================
 
 //Funcao para o modal
 function fechar() {
@@ -52,11 +51,11 @@ function fechar() {
 }
 
 //Funcao de cadastro
-function cadastrar () {
+function cadastrar() {
     let membros = [];
 
     if(localStorage.getItem("membros")) {
-        membros = JSON.parse(localStorage.getItem("membros"))
+        membros = JSON.parse(localStorage.getItem("membros"));
     }
 
     const dataHoraCadastrado = new Date().toLocaleString(); // Obtém a data e hora local formatada
@@ -76,6 +75,7 @@ function cadastrar () {
     exibir(membros);
 }
 
+//Mostragem dos membros
 function exibir(membros) {
     tabela.innerHTML = `
     <div class="info-cadastro">
@@ -86,11 +86,12 @@ function exibir(membros) {
         <div class="c5 campos">Cadastrado em</div>
         <div class="c6 campos">Ações</div>
     </div>
-`
+    `;
+
     for (let i = 0; i < membros.length; i++) {
         tabela.innerHTML += `
         <div class="p-cadastro">
-            <div class="c1 campos">${i+1}</div>
+            <div class="c1 campos">${i + 1}</div>
             <div class="c2 campos">${membros[i].nome}</div>
             <div class="c3 campos">${membros[i].celular}</div>
             <div class="c4 campos">${membros[i].email}</div>
@@ -101,7 +102,7 @@ function exibir(membros) {
                 </div>
             </div>
         </div>`;
-    };
+    }
 
     const btnExcluirList = document.querySelectorAll(".btnExcluir");
     for (let i = 0; i < btnExcluirList.length; i++) {
@@ -112,19 +113,25 @@ function exibir(membros) {
     }
 }
 
+//Exclusão dos membros
 function excluir(index, membros) {
     membros.splice(index, 1);
     localStorage.setItem("membros", JSON.stringify(membros));
     exibir(membros);
 }
 
-//Start
-if(localStorage.getItem("membros")) {
-    let users = JSON.parse(localStorage.getItem("membros"));
-    exibir(users);
+// Função para pesquisar
+buscarNome.addEventListener("input", pesquisar);
+
+// Pesquisar membros
+function pesquisar() {
+    const searchTerm = buscarNome.value.trim().toLowerCase();
+    const membrosFiltrados = listaMembros.filter(membro =>
+        membro.nome.toLowerCase().includes(searchTerm)
+    );
+
+    exibir(membrosFiltrados);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    
-});
-
+// Start
+exibir(listaMembros);
